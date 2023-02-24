@@ -7,9 +7,10 @@ node{
 
                         bat '''
                         echo "cloning repository"
-                        '''
-                        git url: 'https://github.com/AnkitJ0107/ServiceDiscovery.git',
+
+                        git 'https://github.com/AnkitJ0107/ServiceDiscovery.git',
                         branch: 'master'
+                        '''
 
         }
         stage('Build'){
