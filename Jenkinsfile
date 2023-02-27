@@ -4,7 +4,7 @@ pipeline{
     tools {
         maven "maven-3.8.7"
     }
-stages {
+    stages {
         stage('Initialize') {
             steps {
                 bat '''
@@ -15,8 +15,7 @@ stages {
         }
         stage('Build') {
             steps {
-                git 'https://github.com/AnkitJ0107/ServiceDiscovery.git'
-
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/AnkitJ0107/ServiceDiscovery.git']]])
                 // To run Maven on a Windows agent, use
                  bat 'mvn  clean install'
             }
