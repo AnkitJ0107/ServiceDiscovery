@@ -36,7 +36,6 @@ pipeline{
                     docker build -t service_discovery .
                     docker run -p 8761:8761 -d service_discovery
                     '''
-                }
             }
         }
     }
